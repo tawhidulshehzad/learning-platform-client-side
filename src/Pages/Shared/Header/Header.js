@@ -7,7 +7,13 @@ import logo1 from "../../../assets/logo192.png";
 
 const Header = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+    <Navbar
+      collapseOnSelect
+      className="mb-4"
+      expand="lg"
+      bg="light"
+      variant="light"
+    >
       <Container>
         <Navbar.Brand href="#home">
           {" "}

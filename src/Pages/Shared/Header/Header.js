@@ -10,7 +10,14 @@ import logo1 from "../../../assets/logo192.png";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+
   return (
     <Navbar
       collapseOnSelect
@@ -44,12 +51,18 @@ const Header = () => {
               {user?.uid ? (
                 <>
                   <span>{user?.displayName}</span>
-                  <button className="ms-2" >Log out</button>
+                  <button onClick={handleLogOut} className="ms-2">
+                    Log out
+                  </button>
                 </>
               ) : (
                 <>
-                  <Link to="/login">Login</Link>
-                  <Link to="/register">Register</Link>
+                  <Link className="text-decoration-none me-2" to="/login">
+                    Login
+                  </Link>
+                  <Link className="text-decoration-none me-2" to="/register">
+                    Register
+                  </Link>
                 </>
               )}
             </Nav.Link>

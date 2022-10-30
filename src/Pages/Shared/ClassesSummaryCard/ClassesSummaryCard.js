@@ -11,16 +11,16 @@ const ClassesSummaryCard = ({ classes }) => {
   return (
     <Card className="mb-3">
       <Card.Header className="d-flex justify-content-between align-items-center ">
-        <div className="d-flex">
+        <div className="d-flex align-items-center">
           <Image
-            src={author.img}
+            src={author?.img}
             className="me-3"
-            roundedCircle
+            rounded
             style={{ height: "50px" }}
           ></Image>
           <div>
-            <p>{author.name}</p>
-            <p>{author.published_date}</p>
+            <p className="mb-0">{author?.name}</p>
+            <p>{author?.published_date}</p>
           </div>
         </div>
         <div>
@@ -32,9 +32,9 @@ const ClassesSummaryCard = ({ classes }) => {
         <Card.Title>{title}</Card.Title>
         <Card.Img variant="top" src={image_url} />
         <Card.Text>
-          {details.length > 250 ? (
+          {details.length > 100 ? (
             <p>
-              {details.slice(0, 250) + "..."}{" "}
+              {details.slice(0, 100) + "..."}{" "}
               <Link to={`/classes/${_id}`}>Course Details</Link>{" "}
             </p>
           ) : (

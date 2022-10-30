@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <p>copyright</p>
+      <p className="d-flex justify-content-center">copyright</p>
     </div>
   );
 };

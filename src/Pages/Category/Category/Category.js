@@ -1,11 +1,18 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import ClassesSummaryCard from "../../Shared/ClassesSummaryCard/ClassesSummaryCard";
 
 const Category = () => {
-  const classes = useLoaderData();
+  const categoryClasses = useLoaderData();
   return (
     <div>
-      <h3>this is a category : {classes.length}</h3>
+      <h3>Courses: {categoryClasses.length}</h3>
+      {categoryClasses.map((classes) => (
+        <ClassesSummaryCard
+          key={classes._id}
+          classes={classes}
+        ></ClassesSummaryCard>
+      ))}
     </div>
   );
 };

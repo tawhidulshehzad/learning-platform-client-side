@@ -42,9 +42,18 @@ const Header = () => {
                 Courses
               </Link>{" "}
             </Nav.Link>
-            <Nav.Link href="#pricing">FAQ</Nav.Link>
-            <Nav.Link href="#pricing">Blog</Nav.Link>
-            <Nav.Link href="#pricing">toggle theme dark / light</Nav.Link>
+            <Nav.Link href="#pricing">
+              <Link to="/faq" className="text-decoration-none text-dark">
+                FAQ
+              </Link>
+            </Nav.Link>
+            <Nav.Link href="#pricing">
+              {" "}
+              <Link to="/blog" className="text-decoration-none text-dark">
+                Blog
+              </Link>{" "}
+            </Nav.Link>
+            <Nav.Link href="#pricing">Theme dark / light</Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link href="#deets">

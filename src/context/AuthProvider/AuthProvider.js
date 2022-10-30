@@ -11,6 +11,7 @@ const AuthProvider = ({ children }) => {
   const providerLogin = (provider) => {
     return signInWithPopup(auth, provider);
   };
+  const logOut
 
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(auth, (currentUser) => {

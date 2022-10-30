@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from "react-router-dom";
 import logo1 from "../../../assets/logo192.png";
 
 const Header = () => {
@@ -15,14 +16,21 @@ const Header = () => {
       variant="light"
     >
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand>
           {" "}
-          <img style={{ width: "30px" }} src={logo1} alt="" /> Learning Hub
+          <Link to="/" className="text-decoration-none text-dark">
+            <img style={{ width: "30px" }} src={logo1} alt="" /> Learning Hub
+          </Link>{" "}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Courses</Nav.Link>
+            <Nav.Link href="#features">
+              {" "}
+              <Link to="/" className="text-decoration-none text-dark">
+                Courses
+              </Link>{" "}
+            </Nav.Link>
             <Nav.Link href="#pricing">FAQ</Nav.Link>
             <Nav.Link href="#pricing">Blog</Nav.Link>
             <Nav.Link href="#pricing">toggle theme dark / light</Nav.Link>

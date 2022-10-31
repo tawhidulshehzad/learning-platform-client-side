@@ -35,7 +35,7 @@ const ClassesSummaryCard = ({ classes }) => {
           {details.length > 100 ? (
             <p>
               {details.slice(0, 100) + "..."}{" "}
-              <Link to={`/classes/${_id}`}>Course Details</Link>{" "}
+              <Link className="text-decoration-none border bg-info text-white p-1 rounded m-1 " to={`/classes/${_id}`}>Course Details</Link>{" "}
             </p>
           ) : (
             <p>{details}</p>

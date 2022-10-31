@@ -20,19 +20,19 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         element: <Courses></Courses>,
-        loader: () => fetch("http://localhost:5000/classes"),
+        loader: () => fetch("https://learning-hub-server-fawn.vercel.app/classes"),
       },
       {
         path: "/category/:id",
         element: <Category></Category>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.id}`),
+          fetch(`https://learning-hub-server-fawn.vercel.app/category/${params.id}`),
       },
       {
         path: "/classes/:id",
         element: <Classes></Classes>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/classes/${params.id}`),
+          fetch(`https://learning-hub-server-fawn.vercel.app/classes/${params.id}`),
       },
       {
         path: "/login",
@@ -59,7 +59,7 @@ export const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/classes/${params.id}`),
+          fetch(`https://learning-hub-server-fawn.vercel.app/classes/${params.id}`),
       },
     ],
   },

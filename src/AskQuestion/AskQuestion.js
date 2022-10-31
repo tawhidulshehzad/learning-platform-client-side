@@ -2,8 +2,9 @@ import React from "react";
 
 const AskQuestion = () => {
   return (
-    <div>
-      <h2>this is faq</h2>
+    <div className="bg-light p-3">
+      <h2>How to be a good developer?</h2>
+      <p>Nothing special only practice</p>
     </div>
   );
 };

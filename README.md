@@ -1,5 +1,5 @@
 - Website name is learning-hub
-- website link
+- https://learning-hub-f3cfc.web.app/
 - we use firebase for authentication and react in the frontend
   - Router
   - Hooks

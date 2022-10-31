@@ -6,6 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ReactTooltip from "react-tooltip";
 import logo1 from "../../../assets/logo192.png";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 
@@ -77,11 +78,16 @@ const Header = () => {
             </Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
               {user?.photoURL ? (
-                <Image
-                  style={{ height: "30px" }}
-                  roundedCircle
-                  src={user.photoURL}
-                ></Image>
+                <div>
+                  <div data-for="tool" data-tip={user?.displayName}>
+                    <Image
+                      style={{ height: "30px" }}
+                      roundedCircle
+                      src={user.photoURL}
+                    ></Image>
+                  </div>
+                  <ReactTooltip place="right" id="tool"></ReactTooltip>
+                </div>
               ) : (
                 <FaUserAlt />
               )}

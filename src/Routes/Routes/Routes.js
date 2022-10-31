@@ -61,10 +61,10 @@ export const routes = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/classes/${params.id}`),
       },
-      {
-        path: "/*",
-        element: <Page404></Page404>,
-      },
     ],
+  },
+  {
+    path: "/*",
+    element: <Page404></Page404>,
   },
 ]);

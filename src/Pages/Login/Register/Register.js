@@ -5,7 +5,7 @@ import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 
 const Register = () => {
   const [error, setError] = useState("");
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,12 +21,24 @@ const Register = () => {
         console.log(user);
         setError("");
         form.reset();
+        handleUpdateUserProfile(name, photoURL);
       })
       .catch((error) => {
         console.error(error);
         setError(error.message);
       });
   };
+
+  const handleUpdateUserProfile = (name, photoURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL,
+    };
+    updateUserProfile(profile)
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -50,9 +62,7 @@ const Register = () => {
       <Button variant="primary" type="submit">
         Register
       </Button>
-      <Form.Text className="text-danger">
-        {error}
-      </Form.Text>
+      <Form.Text className="text-danger">{error}</Form.Text>
     </Form>
   );
 };

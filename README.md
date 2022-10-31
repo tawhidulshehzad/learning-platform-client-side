@@ -1,5 +1,9 @@
-* website design
-* Item 2
-* Item 3
-  * Sub Item A
-  * Sub Item B
+- Website name is learning-hub
+- website link
+- we use firebase for authentication and react in the frontend
+  - Router
+  - Hooks
+- People can join with their google account
+- Also they can join with their email and password
+- Here we implemented the protected routes for specific people
+- We added some courses for our students
